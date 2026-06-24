@@ -311,6 +311,3 @@ Stack:
 
 ---
 
-## Licencia
-
-MIT
