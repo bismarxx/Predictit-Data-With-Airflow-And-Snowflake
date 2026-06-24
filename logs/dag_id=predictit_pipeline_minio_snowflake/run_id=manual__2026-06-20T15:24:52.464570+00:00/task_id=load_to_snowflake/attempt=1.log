@@ -1,0 +1,49 @@
+[2026-06-20T15:25:04.479+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-06-20T15:25:04.515+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: predictit_pipeline_minio_snowflake.load_to_snowflake manual__2026-06-20T15:24:52.464570+00:00 [queued]>
+[2026-06-20T15:25:04.533+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: predictit_pipeline_minio_snowflake.load_to_snowflake manual__2026-06-20T15:24:52.464570+00:00 [queued]>
+[2026-06-20T15:25:04.535+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 3
+[2026-06-20T15:25:04.571+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): load_to_snowflake> on 2026-06-20 15:24:52.464570+00:00
+[2026-06-20T15:25:04.598+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=69) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-06-20T15:25:04.596+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'predictit_pipeline_minio_snowflake', 'load_to_snowflake', 'manual__2026-06-20T15:24:52.464570+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/predictit_dag.py', '--cfg-path', '/tmp/tmpnf0374n4']
+[2026-06-20T15:25:04.609+0000] {standard_task_runner.py:63} INFO - Started process 71 to run task
+[2026-06-20T15:25:04.613+0000] {standard_task_runner.py:91} INFO - Job 30: Subtask load_to_snowflake
+[2026-06-20T15:25:04.827+0000] {task_command.py:426} INFO - Running <TaskInstance: predictit_pipeline_minio_snowflake.load_to_snowflake manual__2026-06-20T15:24:52.464570+00:00 [running]> on host d1f1de645926
+[2026-06-20T15:25:05.147+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='tu_nombre' AIRFLOW_CTX_DAG_ID='predictit_pipeline_minio_snowflake' AIRFLOW_CTX_TASK_ID='load_to_snowflake' AIRFLOW_CTX_EXECUTION_DATE='2026-06-20T15:24:52.464570+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-06-20T15:24:52.464570+00:00'
+[2026-06-20T15:25:05.150+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-06-20T15:25:05.217+0000] {base.py:84} INFO - Using connection ID 'minio' for task execution.
+[2026-06-20T15:25:05.220+0000] {connection_wrapper.py:384} INFO - AWS Connection (conn_id='minio', conn_type='aws') credentials retrieved from login and password.
+[2026-06-20T15:25:05.523+0000] {snowflake_loader.py:32} INFO - Procesando 242 mercados
+[2026-06-20T15:25:05.527+0000] {snowflake_loader.py:86} INFO - Total de filas a insertar: 820
+[2026-06-20T15:25:05.528+0000] {snowflake_loader.py:88} INFO - Primera fila de ejemplo: (7589, 'How many House seats will Republicans win in the 2026 midterm election?', 'Republican House Seats won in midterms?', 'https://www.predictit.org/markets/detail/7589/How-many-House-seats-will-Republicans-win-in-the-2026-midterm-election', '2026-06-20T11:24:21.1259709', 'Open', None, None, None, None, None, None, 28361, '192 or fewer', '192 or fewer', 0.23, 0.23, 0.22, 0.78, 0.77, 0.23, 0)
+[2026-06-20T15:25:05.542+0000] {base.py:84} INFO - Using connection ID 'snowflake_default' for task execution.
+[2026-06-20T15:25:05.546+0000] {connection.py:386} INFO - Snowflake Connector for Python Version: 3.7.1, Python Version: 3.12.2, Platform: Linux-6.18.33.1-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2026-06-20T15:25:05.549+0000] {connection.py:1211} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2026-06-20T15:25:08.065+0000] {cursor.py:1032} INFO - query: [CREATE TABLE IF NOT EXISTS STG_PREDICTIT_MARKETS_ENRICHED ( -- Datos del mercado...]
+[2026-06-20T15:25:08.369+0000] {cursor.py:1045} INFO - query execution done
+[2026-06-20T15:25:08.371+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-06-20T15:25:08.381+0000] {snowflake_loader.py:140} INFO - Tabla STG_PREDICTIT_MARKETS_ENRICHED creada/verificada
+[2026-06-20T15:25:08.383+0000] {cursor.py:1032} INFO - query: [SELECT COUNT(*) FROM STG_PREDICTIT_MARKETS_ENRICHED]
+[2026-06-20T15:25:08.664+0000] {cursor.py:1045} INFO - query execution done
+[2026-06-20T15:25:08.669+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-06-20T15:25:08.677+0000] {snowflake_loader.py:145} INFO - Filas antes de la inserción: 2460
+[2026-06-20T15:25:08.807+0000] {cursor.py:1032} INFO - query: [INSERT INTO STG_PREDICTIT_MARKETS_ENRICHED ( MARKET_ID, MARKET_NAME, MARKET_SHOR...]
+[2026-06-20T15:25:10.364+0000] {cursor.py:1045} INFO - query execution done
+[2026-06-20T15:25:10.370+0000] {snowflake_loader.py:165} INFO - Insertadas 820 filas
+[2026-06-20T15:25:10.373+0000] {cursor.py:1032} INFO - query: [SELECT COUNT(*) FROM STG_PREDICTIT_MARKETS_ENRICHED]
+[2026-06-20T15:25:10.852+0000] {cursor.py:1045} INFO - query execution done
+[2026-06-20T15:25:10.854+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-06-20T15:25:10.855+0000] {snowflake_loader.py:170} INFO - Filas después de la inserción: 3280
+[2026-06-20T15:25:10.857+0000] {cursor.py:1032} INFO - query: [COMMIT]
+[2026-06-20T15:25:11.090+0000] {cursor.py:1045} INFO - query execution done
+[2026-06-20T15:25:11.092+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-06-20T15:25:11.094+0000] {connection.py:734} INFO - closed
+[2026-06-20T15:25:11.276+0000] {connection.py:740} INFO - No async queries seem to be running, deleting session
+[2026-06-20T15:25:11.465+0000] {snowflake_loader.py:182} INFO - Carga completada exitosamente
+[2026-06-20T15:25:11.468+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-06-20T15:25:11.470+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-06-20T15:25:11.482+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=predictit_pipeline_minio_snowflake, task_id=load_to_snowflake, execution_date=20260620T152452, start_date=20260620T152504, end_date=20260620T152511
+[2026-06-20T15:25:11.564+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-06-20T15:25:11.589+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-20T15:25:11.594+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

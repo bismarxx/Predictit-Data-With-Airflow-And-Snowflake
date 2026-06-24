@@ -1,0 +1,170 @@
+[2026-06-17T03:49:19.212+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-06-17T03:49:19.224+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: predictit_pipeline_minio_snowflake.extract_predictit_to_minio scheduled__2026-06-16T18:00:00+00:00 [queued]>
+[2026-06-17T03:49:19.229+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: predictit_pipeline_minio_snowflake.extract_predictit_to_minio scheduled__2026-06-16T18:00:00+00:00 [queued]>
+[2026-06-17T03:49:19.229+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 3
+[2026-06-17T03:49:19.239+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): extract_predictit_to_minio> on 2026-06-16 18:00:00+00:00
+[2026-06-17T03:49:19.245+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=57) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-06-17T03:49:19.246+0000] {standard_task_runner.py:63} INFO - Started process 59 to run task
+[2026-06-17T03:49:19.247+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'predictit_pipeline_minio_snowflake', 'extract_predictit_to_minio', 'scheduled__2026-06-16T18:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/predictit_dag.py', '--cfg-path', '/tmp/tmpnxjr2tie']
+[2026-06-17T03:49:19.249+0000] {standard_task_runner.py:91} INFO - Job 2: Subtask extract_predictit_to_minio
+[2026-06-17T03:49:19.284+0000] {task_command.py:426} INFO - Running <TaskInstance: predictit_pipeline_minio_snowflake.extract_predictit_to_minio scheduled__2026-06-16T18:00:00+00:00 [running]> on host c32ef8d98d59
+[2026-06-17T03:49:19.346+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='tu_nombre' AIRFLOW_CTX_DAG_ID='predictit_pipeline_minio_snowflake' AIRFLOW_CTX_TASK_ID='extract_predictit_to_minio' AIRFLOW_CTX_EXECUTION_DATE='2026-06-16T18:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-16T18:00:00+00:00'
+[2026-06-17T03:49:19.347+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-06-17T03:49:19.370+0000] {predictit_ingestion.py:14} INFO - Extrayendo datos de https://www.predictit.org/api/marketdata/all/
+[2026-06-17T03:49:20.168+0000] {base.py:84} INFO - Using connection ID 'minio' for task execution.
+[2026-06-17T03:49:20.168+0000] {connection_wrapper.py:384} INFO - AWS Connection (conn_id='minio', conn_type='aws') credentials retrieved from login and password.
+[2026-06-17T03:49:20.169+0000] {warnings.py:110} WARNING - <string>:9: AirflowProviderDeprecationWarning: extra['host'] is deprecated and will be removed in a future release. Please set extra['endpoint_url'] instead
+
+[2026-06-17T03:49:20.549+0000] {predictit_ingestion.py:33} INFO - Archivo subido a MinIO: s3://predictit-raw/raw/predict_markets_20260617_034920.json
+[2026-06-17T03:49:20.550+0000] {python.py:237} INFO - Done. Returned value was: s3://predictit-raw/raw/predict_markets_20260617_034920.json
+[2026-06-17T03:49:20.550+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-06-17T03:49:20.566+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=predictit_pipeline_minio_snowflake, task_id=extract_predictit_to_minio, execution_date=20260616T180000, start_date=20260617T034919, end_date=20260617T034920
+[2026-06-17T03:49:20.623+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-06-17T03:49:20.646+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-06-17T03:49:20.648+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2026-06-17T04:27:08.017+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-06-17T04:27:08.029+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: predictit_pipeline_minio_snowflake.extract_predictit_to_minio scheduled__2026-06-16T18:00:00+00:00 [queued]>
+[2026-06-17T04:27:08.035+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: predictit_pipeline_minio_snowflake.extract_predictit_to_minio scheduled__2026-06-16T18:00:00+00:00 [queued]>
+[2026-06-17T04:27:08.036+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 3
+[2026-06-17T04:27:08.048+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): extract_predictit_to_minio> on 2026-06-16 18:00:00+00:00
+[2026-06-17T04:27:08.055+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=57) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-06-17T04:27:08.056+0000] {standard_task_runner.py:63} INFO - Started process 59 to run task
+[2026-06-17T04:27:08.056+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'predictit_pipeline_minio_snowflake', 'extract_predictit_to_minio', 'scheduled__2026-06-16T18:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/predictit_dag.py', '--cfg-path', '/tmp/tmp6813mf3l']
+[2026-06-17T04:27:08.058+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extract_predictit_to_minio
+[2026-06-17T04:27:08.106+0000] {task_command.py:426} INFO - Running <TaskInstance: predictit_pipeline_minio_snowflake.extract_predictit_to_minio scheduled__2026-06-16T18:00:00+00:00 [running]> on host 35808c9cbbd6
+[2026-06-17T04:27:08.189+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='tu_nombre' AIRFLOW_CTX_DAG_ID='predictit_pipeline_minio_snowflake' AIRFLOW_CTX_TASK_ID='extract_predictit_to_minio' AIRFLOW_CTX_EXECUTION_DATE='2026-06-16T18:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-16T18:00:00+00:00'
+[2026-06-17T04:27:08.190+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-06-17T04:27:08.220+0000] {predictit_ingestion.py:14} INFO - Extrayendo datos de https://www.predictit.org/api/marketdata/all/
+[2026-06-17T04:27:08.952+0000] {base.py:84} INFO - Using connection ID 'minio' for task execution.
+[2026-06-17T04:27:08.953+0000] {connection_wrapper.py:384} INFO - AWS Connection (conn_id='minio', conn_type='aws') credentials retrieved from login and password.
+[2026-06-17T04:27:09.441+0000] {predictit_ingestion.py:33} INFO - Archivo subido a MinIO: s3://predictit-raw/raw/predict_markets_20260617_042708.json
+[2026-06-17T04:27:09.441+0000] {python.py:237} INFO - Done. Returned value was: s3://predictit-raw/raw/predict_markets_20260617_042708.json
+[2026-06-17T04:27:09.441+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-06-17T04:27:09.456+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=predictit_pipeline_minio_snowflake, task_id=extract_predictit_to_minio, execution_date=20260616T180000, start_date=20260617T042708, end_date=20260617T042709
+[2026-06-17T04:27:09.514+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-06-17T04:27:09.532+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-06-17T04:27:09.534+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2026-06-17T04:51:15.905+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-06-17T04:51:15.918+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: predictit_pipeline_minio_snowflake.extract_predictit_to_minio scheduled__2026-06-16T18:00:00+00:00 [queued]>
+[2026-06-17T04:51:15.923+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: predictit_pipeline_minio_snowflake.extract_predictit_to_minio scheduled__2026-06-16T18:00:00+00:00 [queued]>
+[2026-06-17T04:51:15.924+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 3
+[2026-06-17T04:51:15.933+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): extract_predictit_to_minio> on 2026-06-16 18:00:00+00:00
+[2026-06-17T04:51:15.942+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=56) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-06-17T04:51:15.944+0000] {standard_task_runner.py:63} INFO - Started process 58 to run task
+[2026-06-17T04:51:15.943+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'predictit_pipeline_minio_snowflake', 'extract_predictit_to_minio', 'scheduled__2026-06-16T18:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/predictit_dag.py', '--cfg-path', '/tmp/tmpi8yre08b']
+[2026-06-17T04:51:15.946+0000] {standard_task_runner.py:91} INFO - Job 2: Subtask extract_predictit_to_minio
+[2026-06-17T04:51:15.996+0000] {task_command.py:426} INFO - Running <TaskInstance: predictit_pipeline_minio_snowflake.extract_predictit_to_minio scheduled__2026-06-16T18:00:00+00:00 [running]> on host c885278dde50
+[2026-06-17T04:51:16.063+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='tu_nombre' AIRFLOW_CTX_DAG_ID='predictit_pipeline_minio_snowflake' AIRFLOW_CTX_TASK_ID='extract_predictit_to_minio' AIRFLOW_CTX_EXECUTION_DATE='2026-06-16T18:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-16T18:00:00+00:00'
+[2026-06-17T04:51:16.065+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-06-17T04:51:16.088+0000] {predictit_ingestion.py:14} INFO - Extrayendo datos de https://www.predictit.org/api/marketdata/all/
+[2026-06-17T04:51:17.370+0000] {base.py:84} INFO - Using connection ID 'minio' for task execution.
+[2026-06-17T04:51:17.371+0000] {connection_wrapper.py:384} INFO - AWS Connection (conn_id='minio', conn_type='aws') credentials retrieved from login and password.
+[2026-06-17T04:51:17.945+0000] {predictit_ingestion.py:33} INFO - Archivo subido a MinIO: s3://predictit-raw/raw/predict_markets_20260617_045117.json
+[2026-06-17T04:51:17.946+0000] {python.py:237} INFO - Done. Returned value was: s3://predictit-raw/raw/predict_markets_20260617_045117.json
+[2026-06-17T04:51:17.946+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-06-17T04:51:17.965+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=predictit_pipeline_minio_snowflake, task_id=extract_predictit_to_minio, execution_date=20260616T180000, start_date=20260617T045115, end_date=20260617T045117
+[2026-06-17T04:51:18.004+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-06-17T04:51:18.028+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-06-17T04:51:18.030+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2026-06-17T04:58:57.770+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-06-17T04:58:57.783+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: predictit_pipeline_minio_snowflake.extract_predictit_to_minio scheduled__2026-06-16T18:00:00+00:00 [queued]>
+[2026-06-17T04:58:57.788+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: predictit_pipeline_minio_snowflake.extract_predictit_to_minio scheduled__2026-06-16T18:00:00+00:00 [queued]>
+[2026-06-17T04:58:57.788+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 3
+[2026-06-17T04:58:57.814+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): extract_predictit_to_minio> on 2026-06-16 18:00:00+00:00
+[2026-06-17T04:58:57.820+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=56) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-06-17T04:58:57.822+0000] {standard_task_runner.py:63} INFO - Started process 58 to run task
+[2026-06-17T04:58:57.822+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'predictit_pipeline_minio_snowflake', 'extract_predictit_to_minio', 'scheduled__2026-06-16T18:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/predictit_dag.py', '--cfg-path', '/tmp/tmpguqdqg9b']
+[2026-06-17T04:58:57.824+0000] {standard_task_runner.py:91} INFO - Job 2: Subtask extract_predictit_to_minio
+[2026-06-17T04:58:57.859+0000] {task_command.py:426} INFO - Running <TaskInstance: predictit_pipeline_minio_snowflake.extract_predictit_to_minio scheduled__2026-06-16T18:00:00+00:00 [running]> on host b2cde376f368
+[2026-06-17T04:58:57.923+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='tu_nombre' AIRFLOW_CTX_DAG_ID='predictit_pipeline_minio_snowflake' AIRFLOW_CTX_TASK_ID='extract_predictit_to_minio' AIRFLOW_CTX_EXECUTION_DATE='2026-06-16T18:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-16T18:00:00+00:00'
+[2026-06-17T04:58:57.924+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-06-17T04:58:57.943+0000] {predictit_ingestion.py:14} INFO - Extrayendo datos de https://www.predictit.org/api/marketdata/all/
+[2026-06-17T04:58:58.874+0000] {base.py:84} INFO - Using connection ID 'minio' for task execution.
+[2026-06-17T04:58:58.874+0000] {connection_wrapper.py:384} INFO - AWS Connection (conn_id='minio', conn_type='aws') credentials retrieved from login and password.
+[2026-06-17T04:58:59.262+0000] {predictit_ingestion.py:33} INFO - Archivo subido a MinIO: s3://predictit-raw/raw/predict_markets_20260617_045858.json
+[2026-06-17T04:58:59.263+0000] {python.py:237} INFO - Done. Returned value was: s3://predictit-raw/raw/predict_markets_20260617_045858.json
+[2026-06-17T04:58:59.263+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-06-17T04:58:59.278+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=predictit_pipeline_minio_snowflake, task_id=extract_predictit_to_minio, execution_date=20260616T180000, start_date=20260617T045857, end_date=20260617T045859
+[2026-06-17T04:58:59.319+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-06-17T04:58:59.338+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-06-17T04:58:59.340+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2026-06-17T05:12:10.090+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-06-17T05:12:10.102+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: predictit_pipeline_minio_snowflake.extract_predictit_to_minio scheduled__2026-06-16T18:00:00+00:00 [queued]>
+[2026-06-17T05:12:10.107+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: predictit_pipeline_minio_snowflake.extract_predictit_to_minio scheduled__2026-06-16T18:00:00+00:00 [queued]>
+[2026-06-17T05:12:10.108+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 3
+[2026-06-17T05:12:10.118+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): extract_predictit_to_minio> on 2026-06-16 18:00:00+00:00
+[2026-06-17T05:12:10.124+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=56) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-06-17T05:12:10.126+0000] {standard_task_runner.py:63} INFO - Started process 58 to run task
+[2026-06-17T05:12:10.126+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'predictit_pipeline_minio_snowflake', 'extract_predictit_to_minio', 'scheduled__2026-06-16T18:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/predictit_dag.py', '--cfg-path', '/tmp/tmpzn7mp0mj']
+[2026-06-17T05:12:10.129+0000] {standard_task_runner.py:91} INFO - Job 2: Subtask extract_predictit_to_minio
+[2026-06-17T05:12:10.170+0000] {task_command.py:426} INFO - Running <TaskInstance: predictit_pipeline_minio_snowflake.extract_predictit_to_minio scheduled__2026-06-16T18:00:00+00:00 [running]> on host 35430f7b56d9
+[2026-06-17T05:12:10.239+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='tu_nombre' AIRFLOW_CTX_DAG_ID='predictit_pipeline_minio_snowflake' AIRFLOW_CTX_TASK_ID='extract_predictit_to_minio' AIRFLOW_CTX_EXECUTION_DATE='2026-06-16T18:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-16T18:00:00+00:00'
+[2026-06-17T05:12:10.240+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-06-17T05:12:10.262+0000] {predictit_ingestion.py:14} INFO - Extrayendo datos de https://www.predictit.org/api/marketdata/all/
+[2026-06-17T05:12:11.525+0000] {base.py:84} INFO - Using connection ID 'minio' for task execution.
+[2026-06-17T05:12:11.526+0000] {connection_wrapper.py:384} INFO - AWS Connection (conn_id='minio', conn_type='aws') credentials retrieved from login and password.
+[2026-06-17T05:12:11.906+0000] {predictit_ingestion.py:33} INFO - Archivo subido a MinIO: s3://predictit-raw/raw/predict_markets_20260617_051211.json
+[2026-06-17T05:12:11.907+0000] {python.py:237} INFO - Done. Returned value was: s3://predictit-raw/raw/predict_markets_20260617_051211.json
+[2026-06-17T05:12:11.907+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-06-17T05:12:11.922+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=predictit_pipeline_minio_snowflake, task_id=extract_predictit_to_minio, execution_date=20260616T180000, start_date=20260617T051210, end_date=20260617T051211
+[2026-06-17T05:12:11.945+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-06-17T05:12:11.965+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-06-17T05:12:11.967+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2026-06-17T05:14:53.880+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-06-17T05:14:53.892+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: predictit_pipeline_minio_snowflake.extract_predictit_to_minio scheduled__2026-06-16T18:00:00+00:00 [queued]>
+[2026-06-17T05:14:53.897+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: predictit_pipeline_minio_snowflake.extract_predictit_to_minio scheduled__2026-06-16T18:00:00+00:00 [queued]>
+[2026-06-17T05:14:53.898+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 3
+[2026-06-17T05:14:53.910+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): extract_predictit_to_minio> on 2026-06-16 18:00:00+00:00
+[2026-06-17T05:14:53.918+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=56) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-06-17T05:14:53.919+0000] {standard_task_runner.py:63} INFO - Started process 58 to run task
+[2026-06-17T05:14:53.919+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'predictit_pipeline_minio_snowflake', 'extract_predictit_to_minio', 'scheduled__2026-06-16T18:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/predictit_dag.py', '--cfg-path', '/tmp/tmpjflz_a18']
+[2026-06-17T05:14:53.921+0000] {standard_task_runner.py:91} INFO - Job 2: Subtask extract_predictit_to_minio
+[2026-06-17T05:14:53.963+0000] {task_command.py:426} INFO - Running <TaskInstance: predictit_pipeline_minio_snowflake.extract_predictit_to_minio scheduled__2026-06-16T18:00:00+00:00 [running]> on host 4d2d1bb8cef8
+[2026-06-17T05:14:54.034+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='tu_nombre' AIRFLOW_CTX_DAG_ID='predictit_pipeline_minio_snowflake' AIRFLOW_CTX_TASK_ID='extract_predictit_to_minio' AIRFLOW_CTX_EXECUTION_DATE='2026-06-16T18:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-16T18:00:00+00:00'
+[2026-06-17T05:14:54.035+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-06-17T05:14:54.055+0000] {predictit_ingestion.py:14} INFO - Extrayendo datos de https://www.predictit.org/api/marketdata/all/
+[2026-06-17T05:14:55.329+0000] {base.py:84} INFO - Using connection ID 'minio' for task execution.
+[2026-06-17T05:14:55.330+0000] {connection_wrapper.py:384} INFO - AWS Connection (conn_id='minio', conn_type='aws') credentials retrieved from login and password.
+[2026-06-17T05:14:55.736+0000] {predictit_ingestion.py:33} INFO - Archivo subido a MinIO: s3://predictit-raw/raw/predict_markets_20260617_051455.json
+[2026-06-17T05:14:55.737+0000] {python.py:237} INFO - Done. Returned value was: s3://predictit-raw/raw/predict_markets_20260617_051455.json
+[2026-06-17T05:14:55.737+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-06-17T05:14:55.757+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=predictit_pipeline_minio_snowflake, task_id=extract_predictit_to_minio, execution_date=20260616T180000, start_date=20260617T051453, end_date=20260617T051455
+[2026-06-17T05:14:55.817+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-06-17T05:14:55.836+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-06-17T05:14:55.840+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2026-06-17T05:17:57.657+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-06-17T05:17:57.669+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: predictit_pipeline_minio_snowflake.extract_predictit_to_minio scheduled__2026-06-16T18:00:00+00:00 [queued]>
+[2026-06-17T05:17:57.674+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: predictit_pipeline_minio_snowflake.extract_predictit_to_minio scheduled__2026-06-16T18:00:00+00:00 [queued]>
+[2026-06-17T05:17:57.675+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 3
+[2026-06-17T05:17:57.687+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): extract_predictit_to_minio> on 2026-06-16 18:00:00+00:00
+[2026-06-17T05:17:57.694+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=56) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-06-17T05:17:57.696+0000] {standard_task_runner.py:63} INFO - Started process 58 to run task
+[2026-06-17T05:17:57.695+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'predictit_pipeline_minio_snowflake', 'extract_predictit_to_minio', 'scheduled__2026-06-16T18:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/predictit_dag.py', '--cfg-path', '/tmp/tmp75sahc9x']
+[2026-06-17T05:17:57.697+0000] {standard_task_runner.py:91} INFO - Job 2: Subtask extract_predictit_to_minio
+[2026-06-17T05:17:57.743+0000] {task_command.py:426} INFO - Running <TaskInstance: predictit_pipeline_minio_snowflake.extract_predictit_to_minio scheduled__2026-06-16T18:00:00+00:00 [running]> on host 54671d8077fc
+[2026-06-17T05:17:57.818+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='tu_nombre' AIRFLOW_CTX_DAG_ID='predictit_pipeline_minio_snowflake' AIRFLOW_CTX_TASK_ID='extract_predictit_to_minio' AIRFLOW_CTX_EXECUTION_DATE='2026-06-16T18:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-16T18:00:00+00:00'
+[2026-06-17T05:17:57.819+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-06-17T05:17:57.840+0000] {predictit_ingestion.py:14} INFO - Extrayendo datos de https://www.predictit.org/api/marketdata/all/
+[2026-06-17T05:17:59.165+0000] {base.py:84} INFO - Using connection ID 'minio' for task execution.
+[2026-06-17T05:17:59.166+0000] {connection_wrapper.py:384} INFO - AWS Connection (conn_id='minio', conn_type='aws') credentials retrieved from login and password.
+[2026-06-17T05:17:59.561+0000] {predictit_ingestion.py:33} INFO - Archivo subido a MinIO: s3://predictit-raw/raw/predict_markets_20260617_051759.json
+[2026-06-17T05:17:59.563+0000] {python.py:237} INFO - Done. Returned value was: s3://predictit-raw/raw/predict_markets_20260617_051759.json
+[2026-06-17T05:17:59.564+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-06-17T05:17:59.581+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=predictit_pipeline_minio_snowflake, task_id=extract_predictit_to_minio, execution_date=20260616T180000, start_date=20260617T051757, end_date=20260617T051759
+[2026-06-17T05:17:59.635+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-06-17T05:17:59.661+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-06-17T05:17:59.664+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
